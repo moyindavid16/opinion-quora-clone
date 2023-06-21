@@ -1,10 +1,13 @@
-import Icons from "@/components/Icons";
-import Image from "next/image";
+"use client"
+import { Button } from "@/components/ui/Button";
+import { signIn, signOut } from "next-auth/react";
 
 export default function Home() {
+  
+
   return (
     <div>
-      <Icons.onion size={30} />
+      <Button onClick={()=>signOut()}>Sign out</Button>
     </div>
   );
 }

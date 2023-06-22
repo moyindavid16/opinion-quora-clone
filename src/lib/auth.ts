@@ -40,7 +40,6 @@ export const authOptions: NextAuthOptions = {
           token.id=user.id
           return token
         }
-
         return {
           id: client.id,
           name: client.name,
@@ -48,8 +47,8 @@ export const authOptions: NextAuthOptions = {
           picture: client.image,
         }
     },
-    async redirect({baseUrl}){
-      return baseUrl + "/"
+    async redirect(){
+      return "/"
     }
   }
 } 

@@ -1,16 +1,14 @@
-
+import {authOptions} from "@/lib/auth";
+import {getServerSession} from "next-auth/next";
 import Link from "next/link";
 import Icons from "./Icons";
-import {Button} from "./ui/Button";
-import { useSession } from "next-auth/react";
-import { authOptions } from "@/lib/auth";
-import { getServerSession } from "next-auth/next";
+import {buttonVariants} from "./ui/Button";
+import UserAvatar from "./UserAvatar";
 
-const Nav = async() => {
-
-  const session = await getServerSession(authOptions)
+const Nav = async () => {
+  const session = await getServerSession(authOptions);
   return (
-    <div className="w-full bg-white shadow-sm p-3 px-20 flex items-center gap-10 justify-between">
+    <div className="w-full bg-white shadow-sm p-3 px-20 flex items-center gap-10 justify-between mb-8">
       <div className="flex gap-16 text-emerald-500 font-bold text-2xl">
         <Link href="/">
           <div className="flex">
@@ -25,16 +23,22 @@ const Nav = async() => {
           <Link href="/">
             <Icons.home />
           </Link>
+
           <Icons.following />
           <Icons.answer />
-          <Icons.spaces />
+          <Link href="/spaces">
+            <Icons.spaces />
+          </Link>
         </div>
       </div>
 
-      {session && <div>Hello</div>}
-      <Button>
-        <Link href="/sign-in">Sign in</Link>
-      </Button>
+      {!session ? (
+        <Link href="/sign-in" className={buttonVariants()}>
+          Sign in
+        </Link>
+      ) : (
+        <UserAvatar user={session.user} />
+      )}
     </div>
   );
 };

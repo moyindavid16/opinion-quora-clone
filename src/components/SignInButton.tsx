@@ -1,14 +1,12 @@
 "use client";
 
-import {Button} from "@/components/ui/Button";
-import {Loader2} from "lucide-react";
-import {signIn} from "next-auth/react";
-import {useState} from "react";
+import { Button } from "@/components/ui/Button";
+import { Loader2 } from "lucide-react";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
 import Icons from "./Icons";
-import { useRouter } from "next/navigation";
 
 export default function SignInButton() {
-  const router = useRouter()
   const [isLoading, setIsLoading] = useState(false);
 
   const loginWithGoogle = async () => {
@@ -19,7 +17,6 @@ export default function SignInButton() {
       console.log("error");
     } finally {
       setIsLoading(false);
-      //router.push('/')
     }
   };
 

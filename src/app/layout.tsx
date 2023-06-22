@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Providers from "@/lib/Providers";
 import "./globals.css";
+import { Toaster } from "@/components/ui/Toaster";
 
 export const metadata = {
   title: "Create Next App",
@@ -15,6 +16,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
         <Providers>
           <Nav />
           <>{children}</>
+          <Toaster />
         </Providers>
       </body>
     </html>

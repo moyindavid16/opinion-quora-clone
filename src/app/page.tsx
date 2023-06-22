@@ -7,7 +7,6 @@ export default function Home() {
 
   return (
     <div>
-      <Button onClick={()=>signOut()}>Sign out</Button>
     </div>
   );
 }

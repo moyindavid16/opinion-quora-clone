@@ -1,12 +1,37 @@
-"use client"
-import { Button } from "@/components/ui/Button";
-import { signIn, signOut } from "next-auth/react";
+import Icons from "@/components/Icons";
+import {AvatarIcon} from "@/components/UserAvatar";
+import {Input} from "@/components/ui/Input";
+import {getAuth} from "@/lib/auth";
+import Link from "next/link";
 
-export default function Home() {
-  
+export default async function Home() {
+  const session = await getAuth();
 
   return (
-    <div>
+    <div className="w-full  flex px-10">
+      <div className="w-1/5">Spaces</div>
+
+      <div className="bg-white flex flex-col shadow rounded w-1/2">
+        <div className="flex p-3 gap-2 items-center">
+          <AvatarIcon image={session?.user.image || ""} />
+          <div className="grow flex flex-col gap-2">
+            <button className="w-full text-left px-3 py-1 text-gray-500 rounded-full bg-gray-100">
+              What do you want to ask or share?
+            </button>
+            <div className="flex justify-around text-center text-gray-500 text-sm font-semibold">
+              <Link href="/create-question" className="border-r grow flex items-center justify-center gap-1">
+                <Icons.ask /> Ask
+              </Link>
+              <button className="border-r grow flex items-center justify-center gap-1 ">
+                <Icons.answer2 /> Answer
+              </button>
+              <Link href="/create-post" className="grow flex items-center justify-center gap-1 ">
+                <Icons.post /> Post
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

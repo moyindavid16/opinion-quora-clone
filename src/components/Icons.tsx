@@ -147,16 +147,11 @@ const Icons = {
     </svg>
   ),
   compass: (props: any) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      height="1em"
-      viewBox="0 0 512 512"
-      {...props}
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" {...props}>
       <path d="M464 256a208 208 0 1 0-416 0 208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0 256 256 0 1 1-512 0zm306.7 69.1-144.3 55.5c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31l-55.5 144.3c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0-64 0 32 32 0 1 0 64 0z" />
     </svg>
   ),
-  spinner:(props: any) => (
+  spinner: (props: any) => (
     <svg
       aria-hidden="true"
       height={props.size}
@@ -175,7 +170,50 @@ const Icons = {
         d="M93.968 39.04c2.425-.636 3.894-3.128 3.04-5.486A50 50 0 0 0 41.735 1.279c-2.474.414-3.922 2.919-3.285 5.344.637 2.426 3.12 3.849 5.6 3.484a40.916 40.916 0 0 1 44.131 25.769c.902 2.34 3.361 3.802 5.787 3.165Z"
         fill="currentFill"
       />
-    </svg>)
+    </svg>
+  ),
+  ask: (props: any) => (
+    <svg width={24} height={24} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <g stroke="#666" strokeWidth={1.5} fill="none" fillRule="evenodd">
+        <g transform="translate(9 7)">
+          <path d="M3 6v-.5A2.5 2.5 0 1 0 .5 3" strokeLinecap="round" strokeLinejoin="round" />
+          <circle fill="#666" cx={3} cy={8.5} r={1} stroke="none" />
+        </g>
+        <path
+          d="M7.5 4h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-3L9 22v-3H7.5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
+  ),
+  answer2: (props: any) => (
+    <svg width={24} height={24} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <g strokeWidth={1.5} fill="none" fillRule="evenodd">
+        <path
+          d="M18.571 5.429h0a2 2 0 0 1 0 2.828l-9.9 9.9-4.24 1.416 1.412-4.245 9.9-9.9h0a2 2 0 0 1 2.828 0Z"
+          stroke="#666"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path fill="#666" d="m4.429 19.571 2.652-.884-1.768-1.768z" />
+        <path d="M14.5 19.5h5v-5m-10-10h-5v5" stroke="#666" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+    </svg>
+  ),
+  post: (props: any) => (
+    <svg width={24} height={24} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <g fill="none" fillRule="evenodd">
+        <path
+          d="M18.571 5.429h0a2 2 0 0 1 0 2.828l-9.9 9.9-4.24 1.416 1.412-4.245 9.9-9.9a2 2 0 0 1 2.828 0Z"
+          stroke="#666"
+          strokeWidth={1.5}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path fill="#666" d="m4.429 19.571 2.652-.884-1.768-1.768z" />
+      </g>
+    </svg>
+  ),
 };
 
 export default Icons;

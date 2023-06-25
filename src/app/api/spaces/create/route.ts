@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     return new Response(name, {status: 200})
   } catch (error) {
     if(error instanceof z.ZodError){
-      return new Response(error.message, {status: 400})
+      return new Response("invalid data", {status: 400, statusText: "The name of your space must contain at least 3 characters"})
     }
     return new Response("Something went wrong", {status: 500 })
   }

@@ -26,7 +26,7 @@ export default function UserAvatar({user}: {user: User}) {
   );
 }
 
-const AvatarIcon = ({image}: {image: string}) => {
+export const AvatarIcon = ({image}: {image: string}) => {
   return (
     <Avatar>
       <AvatarImage src={image} />

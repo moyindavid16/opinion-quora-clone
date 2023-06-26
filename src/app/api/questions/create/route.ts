@@ -11,8 +11,9 @@ export async function POST(req: Request) {
       return new Response("You are not Signed In.", {status: 401, statusText: "Sign in then try again."});
     }
 
-    const body = req.json();
+    const body = await req.json();
     const {content, userId} = CreateQuestionValidator.parse({...body, userId: session.user.id});
+    
 
     const questionExists = await prisma.question.findFirst({
       where: {

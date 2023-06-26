@@ -4,6 +4,7 @@ import {User} from "next-auth";
 import {Avatar, AvatarFallback, AvatarImage} from "./ui/Avatar";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger} from "./ui/Dropdown-menu";
 import { signOut } from "next-auth/react";
+import AvatarIcon from "./AvatarIcon";
 
 export default function UserAvatar({user}: {user: User}) {
   const {image,name} = user;
@@ -26,11 +27,4 @@ export default function UserAvatar({user}: {user: User}) {
   );
 }
 
-export const AvatarIcon = ({image}: {image: string}) => {
-  return (
-    <Avatar>
-      <AvatarImage src={image} />
-      <AvatarFallback></AvatarFallback>
-    </Avatar>
-  );
-};
+

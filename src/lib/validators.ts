@@ -12,12 +12,24 @@ export const CreatePostValidator = z.object({
   content: z.string().min(3),
 });
 
+export const GetPostsValidator = z.array(
+  z.object({
+    id: z.string().cuid(),
+    title: z.string().min(3),
+    content: z.string().min(3),
+    author: z.object({
+      name: z.string(),
+      image: z.string()
+    })
+  }),
+);
+
 export const CreateQuestionValidator = z.object({
   userId: z.optional(z.string().cuid()),
   content: z.string().min(3),
 });
 
-
-export type CreateSpaceType = z.infer<typeof CreateSpaceValidator>
-export type CreatePostType = z.infer<typeof CreatePostValidator>
-export type CreateQuestionType = z.infer<typeof CreateQuestionValidator>
+export type CreateSpaceType = z.infer<typeof CreateSpaceValidator>;
+export type CreatePostType = z.infer<typeof CreatePostValidator>;
+export type GetPostsType = z.infer<typeof GetPostsValidator>;
+export type CreateQuestionType = z.infer<typeof CreateQuestionValidator>;

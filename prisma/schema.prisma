@@ -75,13 +75,14 @@ model Space {
 }
 
 model Post {
-  id       String    @id @default(cuid())
-  author   User      @relation(fields: [userId], references: [id])
-  userId   String
-  title    String
-  content  String    @db.Text
-  comments Comment[]
-  votes    Vote[]
+  id        String    @id @default(cuid())
+  createdAt DateTime  @default(now())
+  author    User      @relation(fields: [userId], references: [id])
+  userId    String
+  title     String
+  content   String    @db.Text
+  comments  Comment[]
+  votes     Vote[]
 
   @@index([userId])
 }

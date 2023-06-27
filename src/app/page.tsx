@@ -26,7 +26,7 @@ const TopTaskBar = async() => {
     <div className="bg-white flex shadow rounded p-3 gap-2 items-center">
       <AvatarIcon image={session?.user.image || ""} />
       <div className="grow flex flex-col gap-2">
-        <button className="w-full text-left px-3 py-1 text-gray-500 rounded-full bg-gray-100">
+        <button className="w-full text-left px-3 py-1 text-gray-500 rounded-full bg-gray-100 border border-gray-300">
           What do you want to ask or share?
         </button>
 

@@ -105,7 +105,6 @@ enum VoteType {
 }
 
 model Vote {
-  id     String   @id @default(cuid())
   author User     @relation(fields: [userId], references: [id])
   userId String
   Post   Post     @relation(fields: [postId], references: [id])
@@ -114,6 +113,7 @@ model Vote {
 
   @@index([userId])
   @@index([postId])
+  @@id([userId, postId], name: "voteId")
 }
 
 model Question {

@@ -214,6 +214,77 @@ const Icons = {
       </g>
     </svg>
   ),
+  Upvote: (props: any) => (
+    <svg
+      width={18}
+      height={18}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M12 4 3 15h6v5h6v-5h6z"
+        strokeWidth={1.5}
+        className="stroke-emerald-500"
+        fill="none"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  Downvote: (props: any) => (
+    <svg
+      width={18}
+      height={18}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className="rotate-180"
+      {...props}
+    >
+      <path
+        d="M12 4 3 15h6v5h6v-5h6z"
+        strokeWidth={1.5}
+        className="stroke-gray-500"
+        fill="none"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  Comment: (props: any) => (
+    <svg
+      width={20}
+      height={20}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M12.071 18.86c4.103 0 7.429-3.102 7.429-6.93C19.5 8.103 16.174 5 12.071 5s-7.429 3.103-7.429 6.93c0 1.291.379 2.5 1.037 3.534.32.501-1.551 3.058-1.112 3.467.46.429 3.236-1.295 3.803-.99 1.09.585 2.354.92 3.701.92Z"
+        stroke="#666"
+        strokeWidth={1.5}
+        fill="none"
+      />
+    </svg>
+  ),
+  Share: (props: any) => (
+    <svg
+      width={20}
+      height={20}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g
+        stroke="#666"
+        strokeWidth={1.5}
+        fill="none"
+        fillRule="evenodd"
+        strokeLinecap="round"
+      >
+        <path d="M19.748 10a8.003 8.003 0 0 0-15.496.002m.001 4.003a8.003 8.003 0 0 0 15.494 0" />
+        <path d="m2.5 7.697 1.197 3.289 3.289-1.197m14.5 6.5L20.289 13 17 14.197" />
+      </g>
+    </svg>
+  )
 };
 
 export default Icons;

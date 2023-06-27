@@ -29,7 +29,14 @@ export const CreateQuestionValidator = z.object({
   content: z.string().min(3),
 });
 
+export const VoteValidator = z.object({
+  userId: z.optional(z.string().cuid()),
+  postId: z.string().cuid(),
+  type: z.enum(["Up", "Down"])
+})
+
 export type CreateSpaceType = z.infer<typeof CreateSpaceValidator>;
 export type CreatePostType = z.infer<typeof CreatePostValidator>;
 export type GetPostsType = z.infer<typeof GetPostsValidator>;
 export type CreateQuestionType = z.infer<typeof CreateQuestionValidator>;
+export type PostVoteType = z.infer<typeof VoteValidator>;

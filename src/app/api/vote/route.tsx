@@ -45,6 +45,6 @@ export async function POST(req: Request) {
     return new Response("Success", {status: 200});
   } catch (error) {
     console.error(error);
-    return new Response("Something went wrong", {status: 500});
+    return new Response("Something went wrong while voting", {status: 500, statusText: "Sorry there was an error processing your upvote/downvote."});
   }
 }

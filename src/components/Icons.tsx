@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 const Icons = {
   onion: ({size}: {size: number}) => (
     <svg
@@ -226,7 +228,6 @@ const Icons = {
         d="M12 4 3 15h6v5h6v-5h6z"
         strokeWidth={1.5}
         className="stroke-emerald-500"
-        fill="none"
         strokeLinejoin="round"
       />
     </svg>
@@ -243,8 +244,6 @@ const Icons = {
       <path
         d="M12 4 3 15h6v5h6v-5h6z"
         strokeWidth={1.5}
-        className="stroke-gray-500"
-        fill="none"
         strokeLinejoin="round"
       />
     </svg>
